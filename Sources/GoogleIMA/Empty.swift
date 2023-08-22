@@ -1,0 +1,3 @@
+import GoogleInteractiveMediaAds
+
+struct GoogleIMAEmptyFile {}
