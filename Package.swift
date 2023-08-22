@@ -12,6 +12,10 @@ let package = Package(
             name: "GoogleInteractiveMediaAds",
             targets: ["GoogleIMA"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/cgomez-rb/rbtv-gfk-ios", branch: "main"),
+        .package(url: "https://github.com/cgomez-rb/rbtv-gfk-tvos", branch: "main")
+    ],
     targets: [
         .binaryTarget(
             name: "GoogleIMA_tvOS",
@@ -27,7 +31,9 @@ let package = Package(
             name: "GoogleIMA",
             dependencies: [
                 .target(name: "GoogleIMA_iOS", condition: .when(platforms:[.iOS])),
-                .target(name: "GoogleIMA_tvOS", condition: .when(platforms: [.tvOS]))
+                .target(name: "GoogleIMA_tvOS", condition: .when(platforms: [.tvOS])),
+                .product(name: "s2s_sdk_ios", package: "rbtv-gfk-ios", condition: .when(platforms: [.iOS])),
+                .product(name: "s2s_sdk_tvos", package: "rbtv-gfk-tvos", condition: .when(platforms: [.tvOS]))
             ]
         )
     ]
