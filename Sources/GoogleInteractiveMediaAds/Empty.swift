@@ -1,7 +1,7 @@
-#if canImport(GoogleIMA-tvOS)
-import GoogleIMA-tvOS
+#if os(tvOS)
+import GoogleIMA_tvOS
 #else
-import GoogleIMA-iOS
+import GoogleIMA_iOS
 #endif
 
 struct GoogleIMAEmptyFile {}
