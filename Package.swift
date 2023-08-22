@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "GoogleInteractiveMediaAds",
-            targets: ["GoogleIMA"])
+            targets: ["GoogleInteractiveMediaAds"])
     ],
     targets: [
         .binaryTarget(
@@ -24,7 +24,7 @@ let package = Package(
             checksum: "779ad89d07c343ae4530335159a1094ce6a69300cb06a47a92f65c4e8b1b80f1"
         ),
         .target(
-            name: "GoogleIMA",
+            name: "GoogleInteractiveMediaAds",
             dependencies: [
                 .target(name: "GoogleIMA-iOS", condition: .when(platforms:[.iOS])),
                 .target(name: "GoogleIMA-tvOS", condition: .when(platforms: [.tvOS]))
